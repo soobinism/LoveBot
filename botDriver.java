@@ -1,8 +1,9 @@
-public class botDriver {
+public class BotDriver {
 
 	public static void main(String[] args) {
-		botLogic b = new botLogic();
+		UserInterface iFace = new UserInterface();
+		iFace.UI();
 
-		b.logic();
+		
 	} 
 }
