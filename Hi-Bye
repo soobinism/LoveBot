@@ -1,13 +1,13 @@
-public class HiBye extends BotLogic{
+public class HiBye{
 	
-	public HiBye() {
-		System.out.println("LoveBot: Hello there. I’m your friendly assistant Love Bot and I give dating advice. How can I help you today?");
+	public void HiBye() {
+		
 	}
-	public void greet() {
-			botSay("Hey there! How can I help you?");
+	public String greet() {
+			return("Hey there! How can I help you?");
+			
 	}
 	public void endChat() {
-		botSay("Goodbye!");
 		System.exit(0);
 	}
 }
