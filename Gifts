@@ -1,7 +1,7 @@
 import java.util.*;
 import java.text.SimpleDateFormat;
 
-public class Gifts extends botLogic{
+public class Gifts extends BotLogic{
 	
 	public Gifts() {
 		
