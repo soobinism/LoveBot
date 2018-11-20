@@ -1,0 +1,89 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.*;
+
+import javax.swing.*;
+
+public class UserInterface extends JFrame {
+	
+	// Typing area
+	private JTextField textEnter = new JTextField();
+		
+	// Chat area
+	private JTextArea textChat = new JTextArea();
+		
+	// Scroll pane 
+	JScrollPane scroll = new JScrollPane(textChat);
+	
+	// BotLogic Class Object
+	BotLogic dialogueLogic = new BotLogic();
+	
+	// String to hold user input. 
+	String temp;
+	
+	//Constructor
+	public UserInterface() {
+		
+		
+	}
+	
+	//GUI 
+	public void UI() {
+		
+		// Frame's Attributes:
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(600, 600);
+		this.setResizable(false);
+		this.setLayout(null);
+		this.setTitle("LoveBot");
+		
+		// textEnter (Java text field)'s attributes
+        textEnter.setLocation(2, 540);
+        textEnter.setSize(590, 30);
+		
+		textEnter.addActionListener(new ActionListener()
+	    {
+			@Override
+	        public void actionPerformed (ActionEvent arg0) 
+	        {
+				
+				//Receive Strings from user input
+				temp = textEnter.getText().toLowerCase();
+			
+				//User side of chat
+				textChat.append("You: " + temp + "\n");
+				
+				//Sends user input to the botSay method in this class.
+				botSay(temp);
+		
+				//Resetting "text entering field" with a blank spot to allow for more chatting
+				textChat.setCaretPosition(textChat.getDocument().getLength());
+				textEnter.setText("");
+	        
+	        } //End of actionPerformed method
+			
+	    }); //End of Action Listener
+		
+		//TextChat (Java text area)'s attributes
+        textChat.setLocation(15, 5);
+        textChat.setSize(560, 500);
+        textChat.setEditable(false);
+        scroll.setBounds(10, 11, 570, 500);
+        
+        //Add text field and scrollpane to the content pane.
+        getContentPane().add(textEnter);
+        
+        getContentPane().add(scroll);
+                          
+        //Set the content pane to be visible.
+ 		this.setVisible(true);
+ 		
+ 		
+	} //End of UI method.
+	
+	//Our chatbot takes the user's input and puts it through the dialogue method in the BotLogic class.
+	public void botSay(String s) {
+			textChat.append("LoveBot: " + dialogueLogic.dialogue(temp)+ "\n");
+	}
+	
+} //End of Class UserInterface
