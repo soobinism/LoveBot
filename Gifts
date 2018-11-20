@@ -1,7 +1,7 @@
 import java.util.*;
 import java.text.SimpleDateFormat;
 
-public class Gifts extends BotLogic{
+public class Gifts{
 	
 	public Gifts() {
 		
@@ -21,16 +21,16 @@ public class Gifts extends BotLogic{
 			Winter();
 		}
 	}
-	public void Spring() {
-		botSay("Get him/her a nice lightweight T-Shirt");
+	public String Spring() {
+		return("Get him/her a nice lightweight T-Shirt");
 	}
-	public void Summer() {
-		botSay("Get him/her a swim suit...then a trip to the beach");
+	public String Summer() {
+		return("Get him/her a swim suit...then a trip to the beach");
 	}
-	public void Fall() {
-		botSay("Get him/her a cozy hoodie. It's cuddling season.");
+	public String Fall() {
+		return("Get him/her a cozy hoodie. It's cuddling season.");
 	}
-	public void Winter() {
-		botSay("Get him/her a big fuzzy blanket");
+	public String Winter() {
+		return("Get him/her a big fuzzy blanket");
 	}
 }
