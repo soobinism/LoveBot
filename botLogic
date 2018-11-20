@@ -1,9 +1,9 @@
 import java.util.*;
 
-public class botLogic {
+public class BotLogic {
 	Scanner s = new Scanner(System.in);
 	
-	public botLogic() {
+	public BotLogic() {
 		
 	}
 	public void botSay(String s) {
